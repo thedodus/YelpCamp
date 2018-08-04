@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= user.username %></h1>
+        <img class="img-responsive" src="<%= user.avatar %>" alt="User avatar">
+        <div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+         <p>
+            Slow-carb in meditation tbh butcher vexillologist master cleanse et. Tilde kale chips blue bottle, 
+            typewriter franzen banjo chillwave trust fund authentic tattooed. Tumeric taxidermy anim chillwave biodiesel 
+            venmo etsy duis seitan. Hoodie schlitz man braid aliquip hammock asymmetrical. Literally ramps chicharrones 
+            freegan next level unicorn, adaptogen 8-bit est.
+    
+            Tbh drinking vinegar enim cardigan iPhone commodo squid lomo keytar photo booth lo-fi artisan fashion axe 
+            small batch. Prism poke etsy plaid ad. Mumblecore ut selfies keffiyeh irure, before they sold out quis
+            mollit edison bulb kitsch. Scenester kitsch before they sold out adaptogen, duis magna beard elit chia enim.
+        </p>
+    </div>
+    <div class="col-md-8">
+        <% campgrounds.forEach(function(campground){ %>
+            <h3><a href="/campgrounds/<%=campground._id%>"><%= campground.name %></a></h3>
+            <img class="img-responsive" src="<%= campground.image %>">
+            <p> <%= campground.description %></p>
+        <% }); %>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
